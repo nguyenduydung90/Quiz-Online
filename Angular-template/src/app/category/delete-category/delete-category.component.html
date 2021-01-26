@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-danger">Nếu xóa bạn sẽ xóa tất cả các câu hỏi thuộc đề thi này !</h2>
+            <h2 class="text-danger">Bạn có chắc chắn muốn xóa đề thi này không ?</h2>
+
+        </div>
+        <div class="card-body">
+            <div *ngIf="category">
+                <table class="table table-striped">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>Đề thi</td>
+                            <td>{{ category.name}}</td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: left;"><button (click)="categoriesList()" class="btn btn-success">Quay lại danh sách</button></div>
+            <div style="float: right"><button (click)="deleteCategory(id)" class="btn btn-danger ">Xóa</button></div>
+
+
+        </div>
+    </div>
+</div>

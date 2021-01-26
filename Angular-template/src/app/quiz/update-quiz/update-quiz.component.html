@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cập nhật đề thi</h2>
+            </div>
+            <div class="card-body">
+                <div class="container" style="width: 60%">
+
+<!--                     <div [hidden]="submitted"> -->
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="category_id">Đề thi</label>
+                            <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quiz.category_id">
+                            <option *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Câu hỏi</label>
+                            <input type="text" class="form-control" id="text" value="{{quiz.text}}" required [(ngModel)]="quiz.text" name="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="option1">Đáp án 1 </label>
+                            <input type="text" class="form-control" id="option1" value="{{quiz.option1}}" required [(ngModel)]="quiz.option1" name="option1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="option2">Đáp án 2 </label>
+                            <input type="text" class="form-control" id="option2" value="{{quiz.option2}}" required [(ngModel)]="quiz.option2" name="option2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="option3">Đáp án 3 </label>
+                            <input type="text" class="form-control" id="option3" value="{{quiz.option3}}" required [(ngModel)]="quiz.option3" name="option3">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="option4">Đáp án 4 </label>
+                            <input type="text" class="form-control" id="option4" value="{{quiz.option4}}" required [(ngModel)]="quiz.option4" name="option4">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correctAnswer">Đáp án đúng </label>
+                            <input type="text" class="form-control" id="correctAnswer" value="{{quiz.correctAnswer}}" required [(ngModel)]="quiz.correctAnswer" name="correctAnswer">
+                        </div>
+                        <div style="float: right;"><button (click)="goToList()" class="btn btn-primary">Quay lại danh sách</button></div>
+                        <button type="submit" class="btn btn-success">Cập nhật</button>
+                    </form>
+
+                    <!-- </div> -->
+                     <div >
+                        <h4>You submitted successfully!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

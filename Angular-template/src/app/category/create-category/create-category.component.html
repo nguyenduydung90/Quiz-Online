@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Danh sách đề thi</h3>
+            </div>
+            <div class="card-body">
+                <div class="container">
+
+                    <div [hidden]="submitted">
+                        <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="name">Đề thi</label>
+
+
+                                <input type="text" class="form-control" id="name"  [(ngModel)]="category.name"  name="name">
+<!--                                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="category_name">-->
+<!--                                    <div *ngIf="name.errors.required" style="color: red">-->
+<!--                                        Không được để trống đề thi-->
+<!--                                    </div>-->
+<!--                                    <div *ngIf="name.errors.minlength" style="color: red">-->
+<!--                                        Tên đề thi phải dài ít nhất 2 ký tự.-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+
+                            </div>
+
+
+
+                            <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
+                            <button type="submit" class="btn btn-primary">Thêm</button>
+                        </form>
+                    </div>
+
+                    <div [hidden]="!submitted">
+                        <h4>You submitted successfully!</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
